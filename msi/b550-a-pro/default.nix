@@ -1,9 +1,10 @@
-{
+{config, ...}: {
   imports = [
     ../../common/cpu/amd
     ../../common/pc/ssd
     ../../common/pc
   ];
 
-  boot.kernelModules = [ "nct6683" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [nct6687d];
+  boot.kernelModules = ["nct6687"];
 }
